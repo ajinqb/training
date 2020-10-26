@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript">
+
+	function yesnoCheck() {
+	    if (document.getElementById('license_yes').checked) {
+	        document.getElementById('ifYes').style.display = 'block';
+	    }
+	    else document.getElementById('ifYes').style.display = 'none';
+
+	}
+</script>	
+<head>
+	<link rel="stylesheet" type="text/css" href='https://fonts.googleapis.com/css?family=Josefin Sans' rel='stylesheet'>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Signup - Volunteer Program</title>
+</head>
+<body>
+	<form onsubmit="alert('Thank you')" method="POST">
+		<h5>First Name: <input type="text" name="firstname" required><br><br>
+		Last Name: <input type="text" name="lastname" required><br><br>
+		Email: <input type="email" name="email" required><br><br>
+		Age: <input type="number" name="age" min="18" max="65" required><br><br>
+		Mobile Carrier:
+		<select name="provider" required>
+			<option value="airtel">Airtel</option>
+			<option value="jio">Jio</option>
+			<option value="bsnl">BSNL</option>
+		</select><br><br>
+		Do you have a Motor Vehicle License?: 
+		<input type="radio" onclick="javascript:yesnoCheck();" name="license" id="license_yes" required>Yes
+		<input type="radio" onclick="javascript:yesnoCheck();" name="license" required id="license_no">No<br><br>
+		<div id="ifYes" style="visibility:none">
+		Type of Vehicle:
+		<select name="vehicle_type" id="vehicle">
+			<option value="twowheel">Two wheeler</option>
+			<option value="threewheel">Three Wheeler</option>
+			<option value="fourwheel">Four Wheeler</option>
+			<option value="all">All of the above</option>
+		</select><br><br>
+		</div>
+		How did you find about us?:
+		<select name="reference" required>
+			<option value="newspaper">News paper</option>
+			<option value="socialmedia">Social meedia</option>
+			<option value="advertisment">Advertisment</option>
+			<option value="others">Others</option>
+		</select><br><br>
+		Skills you can offer?:<br>
+		<textarea id="skills" name="skills" rows="5" cols="50">Type your skills here!</textarea><br><br>
+		Disclimer:<br>
+		The above mentioned data is true to my knowledge and i accept the terms and conditions
+		<input type="checkbox" name="disclimer" required><br><br>
+		<input type="submit" name="submit_button" value="Register"><br></h5>
+	</form>
+
+</body>
+</html>
